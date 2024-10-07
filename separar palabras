@@ -1,0 +1,10 @@
+public class Solution {
+
+    public static String[] stringToArray(String s) {
+      
+      String[] palabras = s.split(" ");
+      
+      return palabras;
+    }
+
+}
