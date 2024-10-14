@@ -1,0 +1,12 @@
+public class Kata{
+
+  public static int grow(int[] x){
+    int resultado = 1;
+     for (int num : x) {
+            resultado *= num;
+        }
+    return resultado;
+  
+  }
+
+}
