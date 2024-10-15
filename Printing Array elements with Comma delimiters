@@ -1,0 +1,12 @@
+public class ArrayPrinter {
+
+    public static String printArray(Object[] array) {
+        StringBuilder resultado = new StringBuilder();
+
+        for (Object elemento : array) {
+            resultado.append(elemento).append(",");
+        }
+            resultado.setLength(resultado.length() - 1); // Eliminar la última coma
+        return resultado.toString();
+      }
+}
