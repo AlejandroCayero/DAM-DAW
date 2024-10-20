@@ -1,0 +1,12 @@
+public class DecTools {
+  public static int Digits(long n) {
+    
+     String numero = Long.toString(n);
+     int digitos = 0;
+     for (char num : numero.toCharArray()) {
+       digitos++;
+     }
+    
+    return digitos;
+  }
+}
