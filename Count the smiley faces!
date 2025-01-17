@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class SmileFaces {
+  
+  public static int countSmileys(List<String> arr) {
+        if(arr.isEmpty()) return 0;
+        int cantidad =0;
+        for (String caras : arr){
+            char[] simbolos = caras.toCharArray();
+            if(simbolos.length==3){
+                if((simbolos[0]==':' ||simbolos[0]==';')&&(simbolos[1]=='-' || simbolos[1]=='~')&&(simbolos[2]==')' || simbolos[2]=='D')) cantidad++;
+            }else if(simbolos.length==2){
+                if((simbolos[0]==':' ||simbolos[0]==';')&&(simbolos[1]==')' || simbolos[1]=='D')) cantidad++;
+            }
+        }
+        return cantidad;
+    }
+}
