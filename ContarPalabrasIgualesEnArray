@@ -1,0 +1,18 @@
+import java.util.HashMap;
+public class Main {
+    public static void main(String[] args) {
+       String[] palabras={"manzana", "banana", "manzana", "pera", "manzana", "banana"};
+       cuentapalabras(palabras);
+    }
+    public static void cuentapalabras(String[] palabras){
+        HashMap<String,Integer> mapa = new HashMap<String,Integer>();
+        for(String palabra : palabras){
+            if(mapa.containsKey(palabra)){
+                mapa.put(palabra, mapa.get(palabra)+1);
+            }else{
+                mapa.put(palabra,1);
+            }
+        }
+    System.out.println(mapa);
+    }
+}
