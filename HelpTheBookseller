@@ -1,0 +1,41 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class StockList { 
+	
+  // 1st parameter is the stocklist (L in example), 
+	// 2nd parameter is list of categories (M in example)
+	public static String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) { 
+    HashMap<String,Integer> stockPorCategoria = new HashMap<String,Integer>();
+    if(lstOfArt==null || lstOf1stLetter==null || lstOfArt.length == 0 || lstOf1stLetter.length== 0){
+            return "";
+        }
+
+        for(String libros : lstOfArt){
+            String[]categoria=libros.split(" ");
+            String[]letras=categoria[0].split("");
+            String letra =letras[0];
+            int cantidad = Integer.parseInt(categoria[1]);
+
+            if (stockPorCategoria.containsKey(letra)) {
+                stockPorCategoria.put(letra, stockPorCategoria.get(letra)+cantidad);
+            }else {
+                stockPorCategoria.put(letra, cantidad);
+            }
+        }
+        String resultado ="";
+        for(String letra : lstOf1stLetter){
+            if(stockPorCategoria.containsKey(letra)){
+                resultado += "(";
+                resultado += letra+" : "+stockPorCategoria.get(letra);
+                resultado += ") - ";
+            }else {
+                resultado += "(";
+                resultado += letra+" : "+0;
+                resultado += ") - ";
+            }
+        }
+        String subcadena = resultado.substring(0, resultado.length()-3);
+        return subcadena;
+    }
+ }
