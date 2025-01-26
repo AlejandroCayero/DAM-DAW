@@ -1,0 +1,25 @@
+import java.util.HashMap;
+
+public class Scramblies {
+    
+    public static boolean scramble(String str1, String str2) {    
+      String[]primero= str1.split("");
+        String[]segundo= str2.split("");
+        HashMap<String, Integer> map = new HashMap<>();
+
+        for( String letra : primero){
+            if(map.containsKey(letra)){
+                map.put(letra,map.get(letra)+1);
+            }else{
+                map.put(letra,1);
+            }
+        }
+       for (String letra : segundo) {
+            if (!map.containsKey(letra) || map.get(letra) == 0) {
+                return false; 
+            }
+            map.put(letra, map.get(letra) - 1);
+        }
+      return true;
+}
+}
