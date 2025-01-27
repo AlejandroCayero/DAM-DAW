@@ -1,0 +1,21 @@
+import java.util.HashMap;
+public class Kata {
+  public static String firstNonRepeatingLetter(String s){
+    String[]palabra =s.toLowerCase().split("");
+    HashMap<String,Integer> map = new HashMap<>();
+    for(String letra : palabra){
+      if(map.containsKey(letra)){
+        map.put(letra,map.get(letra)+1);
+      }else{
+        map.put(letra,1);
+      }
+    }
+    for (int i = 0; i < s.length(); i++) {
+      String letra = s.substring(i, i + 1);
+      if (map.get(letra.toLowerCase()) == 1) { 
+        return letra; 
+      }
+    }
+    return "";
+  }
+}
