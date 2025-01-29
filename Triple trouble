@@ -1,0 +1,21 @@
+public class Kata {
+    public static int TripleDouble(long num1, long num2) {
+     String numero1 =String.valueOf(num1);
+     String numero2 =String.valueOf(num2);
+     char coincidencia =0;
+      
+      for(int i =0;i<numero1.length()-2;i++){
+        if (numero1.charAt(i) == numero1.charAt(i+1) && numero1.charAt(i+1) == numero1.charAt(i+2)) {
+          coincidencia =numero1.charAt(i);
+          for(int j=0;j<numero2.length()-1;j++){
+            if(numero2.charAt(j)==coincidencia){
+              if(numero2.charAt(j)==numero2.charAt(j+1)){
+                return 1;
+              }
+            }                  
+          }         
+        }
+      }
+      return 0;
+    }
+}
