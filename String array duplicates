@@ -1,0 +1,17 @@
+class Solution{    
+    public static String[] dup(String[] arr){
+        int longitud =arr.length;
+        String solucion ="";
+        for( String palabra : arr){
+
+            for(int i =0;i<palabra.length();i++){
+                if(i == 0 || palabra.charAt(i) != palabra.charAt(i - 1)){
+                    solucion+=palabra.charAt(i);
+                }
+            }
+            solucion+=" ";
+        }
+        String[] resultado = solucion.trim().split(" ");
+        return resultado;
+    }
+}
