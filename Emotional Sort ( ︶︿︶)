@@ -1,0 +1,36 @@
+import java.util.HashMap;
+public class Solution {
+
+    public static String[] sortEmotions(boolean order,String[] emotions) {
+        String[] carasDes ={":D",":)",":|",":(","T_T"};
+        HashMap<String,Integer> mapa =new HashMap<>();
+        for(int i =0;i<carasDes.length;i++){
+            mapa.put(carasDes[i],i+1);
+        }
+        if(order){
+
+            for(int i =0;i<emotions.length;i++){
+                for(int j=i+1;j< emotions.length;j++) {
+                    if ((mapa.get(emotions[i])) > (mapa.get(emotions[j]))) {
+                        String temp = emotions[i];
+                        emotions[i] = emotions[j];
+                        emotions[j] = temp;
+                    }
+                }
+            }
+        }else {
+            for(int i =0;i<emotions.length;i++){
+                for(int j=i+1;j< emotions.length;j++) {
+                    if ((mapa.get(emotions[i])) < (mapa.get(emotions[j]))) {
+                        String temp = emotions[i];
+                        emotions[i] = emotions[j];
+                        emotions[j] = temp;
+                    }
+                }
+            }
+        }
+        return emotions;
+        
+    }
+
+}
